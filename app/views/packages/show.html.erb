@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="col-md-12">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Titulo:</strong>
+    <%= @package.title %>
+  </p>
+
+  <p>
+    <strong>Dimensiones:</strong>
+    <%= @package.dimension%>
+  </p>
+
+  <p>
+    <strong>Descripcion:</strong>
+    <%= @package.description%>
+  </p>
+  <%= link_to 'Editar', edit_package_path(@package) %> |
+  <%= link_to 'Atras', packages_path %>
+  </div>
+</div>

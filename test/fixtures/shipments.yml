@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  package_id: 
+  container_id: 
+  status: MyString
+
+two:
+  package_id: 
+  container_id: 
+  status: MyString

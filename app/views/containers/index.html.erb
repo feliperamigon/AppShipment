@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="col-md-12">
+  <p id="notice"><%= notice %></p>
+  <h1>Containers de <%= current_user.name%></h1>
+  <table id="lista-containers">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Fecha de envio</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @containers.each do |container| %>
+        <tr>
+          <td><%= container.title%></td>
+          <td><%= container.origin%></td>
+          <td><%= container.destiny%></td>
+          <td><%= container.shipping_day%></td>
+          <td><%= link_to 'Mostrar Información', container %></td>
+          <td><%= link_to 'Editar', edit_container_path(container) %></td>
+          <td><%= link_to 'Eliminar', container, method: :delete, data: { confirm: 'Estas seguro que deseas eliminarlo?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ </div>
+  <div class="col-md-12" style="margin-top:20px;">
+    <button class="btn btn-md btn-success" style="text-decoration: none;"><%= link_to 'Crear container nuevo', new_container_path ,:class=>"links"%></button>
+  </div>
+</div>
+
+<br>
+
+

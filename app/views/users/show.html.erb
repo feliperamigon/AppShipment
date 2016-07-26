@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Bienvenido <%= current_user.name%>!</h2>
+		</div>
+		<div id="panel" class="col-sm-3 jumbotron">
+			<ul>
+				<h4></h4>
+				<li><%= link_to "Mi perfil" , :class => 'links'%></li>
+				<li><%= link_to "Mis Containers",containers_path(current_user),:class => 'links'%></li>
+				<li><%= link_to "Mis paquetes", packages_path(current_user),:class => 'links'%></li>
+				<li>Reputación</li>
+				<li>Configuración</li>
+			</ul>
+		</div>
+		<div id="informacion" class="container">
+			<div class="row">
+				<div id="informacion-perfil" class="col-sm-8 jumbotron" style="background:#1abc9c;margin-left:20px;color:white;">
+					<div class="row">
+						
+						<div id="img-perfil" class="col-sm-12" style="left:30%;"><%= image_tag current_user.avatar,:class => "style_avatar"%></div><br>
+						<h2>Datos de perfil:</h2> <hr>
+						<div class="col-sm-6"><strong>Nombre:</strong> <%= current_user.name%> <%= current_user.last_name%></div>
+						<div class="col-sm-6"><strong>Email:</strong> <%= current_user.email%></div>
+						<div class="col-sm-6"><strong>País:</strong> <%= current_user.country%></div>
+						<div class="col-sm-6"><strong>Departamento:</strong> <%= current_user.state%></div>
+						<div class="col-sm-6"><strong>Ciudad:</strong> <%= current_user.city%></div>
+						<div class="col-sm-6"><strong>Telefono:</strong> <%= current_user.cellphone%></div>
+						<div class="col-sm-6"><strong>Telefono Alternativo:</strong> <%= current_user.telephone%></div>
+					</div>
+				</div>
+				<div id="informacion-container" class="col-sm-8 jumbotron" style="background-color:#1abc9c;margin-left:20px;" hidden>
+					
+				</div>
+				<div id="informacion-paquete" class="col-sm-8 jumbotron" style="background-color:#1abc9c;margin-left:20px;" hidden>
+					
+				</div>
+				<div id="informacion-reputacion" class="col-sm-8 jumbotron" style="background-color:#1abc9c;margin-left:20px;" hidden>
+					
+				</div>
+				<div id="informacion-configuracion" class="col-sm-8 jumbotron" style="background-color:#1abc9c;margin-left:20px;" hidden>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

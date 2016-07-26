@@ -1,0 +1,12 @@
+<div class="col-sm-6 col-md-3">
+			    <div class="thumbnail container-thumb text-center">
+			     <!-- Aqui va la imagen con el image_tag -->
+			      <div class="caption">
+			        <h2><%=container.title%></h2><hr>
+			        <h3 align="center"><strong>Ciudad origen:</strong> <%=container.origin%></h3>
+			        <h3 align="center"><strong>Ciudad destino:</strong> <%=container.destiny%></h3>
+			        <h3 align="center"><strong>Fecha partida:</strong> <%=container.shipping_day%></h3>
+			        <p style="margin-top:5px;"><%= link_to "Ver mas..",container_path(container.id), :class=>"links"%></p>
+			      </div>
+			    </div>
+</div>

@@ -1,0 +1,48 @@
+
+  <div class="col-md-12" align="center">
+   
+  </div>
+</div>
+
+
+
+  <div class="col-md-12" class="row">
+    <h1><%= @container.title%></h1>
+    <div class="col-md-12">
+      <p>Propietario : <%= @container.user.name%></p>
+      <p>Origin : <%= @container.origin%></p>
+      <p>Destiny: <%= @container.destiny%></p>
+      <p>Shipping Day: <%= @container.shipping_day%></p><br><br><br>
+      <% if current_user.id == @container.user.id%>
+              <h2>Lista de Solicitudes de paquetes</h2>
+              <table id="lista-containers">
+                <th>Titulo</th>
+                <th>Dimensiones</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th></th>
+                <tbody>
+                      
+                            <% @shipments.each do |shipment| %>
+                          <tr>
+                            <td><%= shipment.package.title%></td>
+                            <td><%= shipment.package.dimension%></td>
+                            <td><%= shipment.package.description%></td>
+                            <td><%= shipment.status%></td>
+                            <td><%= link_to 'Aprobar',aproveRequest_container_path(shipment.id)%>|<%= link_to 'Rechazar',rejectRequest_container_path(shipment.id)%></td>
+                          </tr>
+                        <% end %>
+                      
+                </tbody>
+              </table>
+           <% elsif %>
+<div class="col-md-12" align="center" style="margin-bottom: 20px;">
+        <button class="btn btn-md btn-sucess" id="btnplay" ><%= link_to "Reserve",reserve_container_path(@container.id), :class=>"links"%></button>
+    </div>
+     <% end %> 
+    </div>
+<br>
+<br>
+<br>
+</div>
+

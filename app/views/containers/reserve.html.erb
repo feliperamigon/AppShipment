@@ -1,0 +1,41 @@
+
+ <div class="container-fluid">
+ 	
+	<div id="panel" class="row">
+	 	<div id="title" class="col-sm-6" style="text-align:center">
+	 		<h2>Reservando:</h2>
+	 		<h3><%= @container.title%></h3>
+	 	</div>
+	 	<div id="instructions" class="col-sm-6">
+	 		<ul>
+	 			<li>Origin: <%= @container.origin%></li>
+	 			<li>Destiny:<%= @container.destiny%></li>
+	 			<li>Shipping Day:<%= @container.shipping_day%></li>
+	 		</ul>
+	 	</div>
+	 	<div class="col-md-12">
+	 	<table id="lista-containers">
+		    <thead>
+		      <tr>
+		        <th>Titulo</th>
+		        <th>Dimensiones</th>
+		        <th>Descripcion</th>
+		        <th colspan="3"></th>
+		      </tr>
+		    </thead>
+
+		    <tbody>
+		      <% @packages.each do |package| %>
+		        <tr>
+		          <td><%= package.title %></td>
+		          <td><%= package.dimension %></td>
+		          <td><%= package.description %></td>
+		          <td><%= link_to 'Reservar Aqui', reservation_container_path(package_id: package.id) %></td>
+		        </tr>
+		      <% end %>
+		    </tbody>
+ 		 </table>
+  </div>
+	 	</div>
+ 	</div>	
+</div>

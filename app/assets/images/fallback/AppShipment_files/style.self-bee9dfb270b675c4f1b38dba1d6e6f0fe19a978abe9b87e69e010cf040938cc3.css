@@ -1,0 +1,19 @@
+.style_avatar {
+  border-right: 1px solid black;
+  width:140px;
+  height:auto;
+  margin-bottom: 50px;
+}
+#lista-containers{
+	border: 1px solid black;
+}
+
+#lista-containers th{
+	border: 1px solid black;
+	padding:10px;
+}
+
+#lista-containers td{
+	border: 1px solid black;
+	padding:20px;
+}
